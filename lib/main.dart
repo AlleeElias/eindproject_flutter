@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ColorGenerator.dart';
+import 'colorgenerator.dart';
+import 'pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -84,29 +85,6 @@ class _MyGamingPageState extends State<MyGamingPage> {
         tooltip: 'Enter!',
         child: const Text('Enter!'),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class OpenScreenPage extends StatefulWidget {
-  const OpenScreenPage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<OpenScreenPage> createState() => _OpenScreenState();
-}
-
-class _OpenScreenState extends State<OpenScreenPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Text('Dit is het nieuwe scherm'),
-      ),
     );
   }
 }
