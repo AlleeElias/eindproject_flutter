@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NavigationWidget extends StatelessWidget {
+class NavigationWidget extends StatefulWidget {
   const NavigationWidget({super.key});
 
+  @override
+  State<NavigationWidget> createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavigationWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(

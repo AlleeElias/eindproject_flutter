@@ -17,11 +17,15 @@ class _OpenScreenState extends State<OpenScreenPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      bottomNavigationBar: const BottomAppBar(
+        color: Colors.red,
+        elevation: 0,
+        child: NavigationWidget(),
+      ),
       body: Center(
           child: Column(
         children: const <Widget>[
           Text('Dit is het nieuwe scherm'),
-          NavigationWidget()
         ],
       )),
     );
