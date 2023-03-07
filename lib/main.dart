@@ -3,6 +3,7 @@ import 'package:flutter_project/pages/profilepage.dart';
 
 import 'colorgenerator.dart';
 import 'pages/homepage.dart';
+import 'pages/viewpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +41,7 @@ class GamingApp extends StatelessWidget {
             ],
           ),
           body: const TabBarView(
-            children: [OpenScreenPage(), OpenScreenPage(), ProfilePage()],
+            children: [OpenScreenPage(), ViewPage(), ProfilePage()],
           ),
         ));
   }
