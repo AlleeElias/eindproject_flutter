@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class NavigationWidget extends StatefulWidget {
@@ -17,8 +18,11 @@ class _NavBarState extends State<NavigationWidget> {
       BottomNavigationBarItem(icon: Icon(Icons.account_box), label: 'Messages')
     ]);
   }
+*/
 /*    return Container(
         decoration: const BoxDecoration(color: Colors.white),
         child: const Text('Dit is de navigatiebar?'));
-  }*/
+  }*//*
+
 }
+*/
