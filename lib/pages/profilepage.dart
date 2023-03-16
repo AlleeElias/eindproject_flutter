@@ -14,8 +14,22 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Center(
           child: Column(
-        children: const <Widget>[
-          Text('Dit is het profile scherm'),
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Image.asset("images/profilepic.jpeg"),
+                flex: 6,
+              ),
+              Expanded(
+                child: Text("Dit is de infobar"),
+                flex: 4,
+              )
+            ],
+          ),
+          Row(
+            children: [Text("Hier komen de posts")],
+          )
         ],
       )),
     );

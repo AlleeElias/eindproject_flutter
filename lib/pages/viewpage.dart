@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/data.dart' as lib;
 
 class ViewPage extends StatefulWidget {
   const ViewPage({super.key});
@@ -13,9 +14,24 @@ class _ViewPageState extends State<ViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Column(
-        children: const <Widget>[
-          Text('Dit is het view scherm'),
+          child: ListView(
+        children: [
+          for (lib.Post p in lib.posts!)
+            Container(
+              child: Column(children: [
+                Row(
+                  children: [Text(p.title)],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(p.image),
+                      flex: 10,
+                    )
+                  ],
+                )
+              ]),
+            )
         ],
       )),
     );
