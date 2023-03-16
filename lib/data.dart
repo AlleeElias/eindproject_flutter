@@ -19,3 +19,11 @@ Post post2 = Post(
     title: 'Dit is mijn tweede post!',
     image: 'images/profilepic.jpeg',
     description: 'Bedankt om mijn tweede post te lezen!');
+Post post3 = Post(
+    title: 'Dit is mijn derde post!',
+    image: 'images/profilepic.jpeg',
+    description: 'Bedankt om mijn derde post te lezen!');
+Post post4 = Post(
+    title: 'Dit is mijn vierde post!',
+    image: 'images/profilepic.jpeg',
+    description: 'Bedankt om mijn vierde post te lezen!');
