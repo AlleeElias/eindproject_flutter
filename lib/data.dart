@@ -9,7 +9,7 @@ class Post {
         this.description = description;
 }
 
-List<Post> posts = [post1, post2];
+List<Post> posts = [post1, post2, post3, post4];
 
 Post post1 = Post(
     title: 'Dit is mijn eerste post!',
