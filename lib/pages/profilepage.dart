@@ -1,5 +1,6 @@
+import 'dart:html';
+
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -13,6 +14,14 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   late AssetsAudioPlayer _assetAudioPlayer = AssetsAudioPlayer();
   final audios = <Audio>[Audio('assets/audios/sounds.mp3')];
+
+  bool liked = false;
+
+  var dropopties = ['Geen', 'Bruine', 'Sneeuwtje'];
+
+  String gekozenBeer = 'Geen';
+
+  var inputController = TextEditingController();
 
   @override
   void initState() {
@@ -31,51 +40,112 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Center(
           child: Column(
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    flex: 6,
-                    child: GestureDetector(
-                        onTap: () =>
-                        {
+              Expanded(
+                flex: 6,
+                child: GestureDetector(
+                    onTap: () => {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => VideoPage()))
                         },
-                        child: Image.asset("images/profilepic.jpeg")),
-                  ),
-                  Expanded(
-                    child: Text(
-                        "Sneeuwberen zijn cool. Geniet van onze sexy beren geluiden! Je kan ook op de foto klikken om een mooie berenvideo te zien :)"),
-                    flex: 4,
-                  )
-                ],
+                    child: Image.asset("images/profilepic.jpeg")),
               ),
-              Row(
-                children: [
-                  Text("Deel jouw mening over deze prachtige beren hieronder:")
-                ],
+              const Expanded(
+                flex: 4,
+                child: Text(
+                    "Sneeuwberen zijn cool. Geniet van onze sexy beren geluiden! Je kan ook op de foto klikken om een mooie berenvideo te zien :)"),
               )
             ],
-          )),
+          ),
+          Row(
+            children: [
+              Text(
+                  "Hieronder kan je u mening delen over deze prachtige beesten:")
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(flex: 6, child: Text("Ik hou van sneeuwberekes?")),
+              Expanded(
+                  flex: 4,
+                  child: Checkbox(
+                      value: liked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          liked = value!;
+                        });
+                      }))
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(flex: 6, child: Text("Welke beren vindt u leuk?:")),
+              Expanded(
+                  flex: 4,
+                  child: DropdownButton(
+                    items: dropopties
+                        .map((e) => DropdownMenuItem<String>(
+                              child: Text(e),
+                              value: e,
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        gekozenBeer = value!;
+                      });
+                    },
+                    value: gekozenBeer,
+                  )),
+            ],
+          ),
+          Row(
+            children: [
+              Text("Hieronder kan je je mening uitgebreid bespreken:")
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                  child: TextField(
+                controller: inputController,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white30,
+                    hintText: 'Geef je mening :)'),
+              ))
+            ],
+          ),
+          Row(
+            children: [
+              TextButton(
+                  onPressed: () => setState(() {
+                        inputController.clear();
+                        gekozenBeer = 'Geen';
+                        liked = false;
+                      }),
+                  child: Text('Versturen!'))
+            ],
+          )
+        ],
+      )),
     );
   }
 }
 
 class VideoPage extends StatelessWidget {
   VideoPlayerController videoPlayerController =
-  VideoPlayerController.asset("assets/videos/beelden.mp4");
+      VideoPlayerController.asset("assets/videos/beelden.mp4");
 
   @override
   Widget build(BuildContext context) {
     videoPlayerController.initialize();
     videoPlayerController.play();
     return GestureDetector(
-        onDoubleTap: () => {
-        Navigator.pop(context)
-    },
+        onDoubleTap: () => {Navigator.pop(context)},
         child: VideoPlayer(videoPlayerController));
   }
 }

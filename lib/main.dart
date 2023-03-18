@@ -38,7 +38,7 @@ class GamingApp extends StatelessWidget {
               Tab(icon: Icon(Icons.home), text: "Welcome"),
               Tab(icon: Icon(Icons.add_circle), text: "For You"),
               Tab(icon: Icon(Icons.access_time_filled), text: "Polar Wiki"),
-              Tab(icon: Icon(Icons.person), text: "Profile"),
+              Tab(icon: Icon(Icons.person), text: "Review"),
             ],
           ),
           body: TabBarView(
