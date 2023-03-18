@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/pages/archivepage.dart';
 import 'package:flutter_project/pages/profilepage.dart';
 
-import 'colorgenerator.dart';
 import 'pages/homepage.dart';
 import 'pages/viewpage.dart';
 
@@ -12,7 +12,7 @@ void main() {
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gaming',
+      title: 'Polar Bears',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -29,7 +29,7 @@ class GamingApp extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text("Gaming App"),
+            title: const Text("Polar Bears"),
           ),
           bottomNavigationBar: const TabBar(
             indicatorColor: Colors.blueAccent,
@@ -37,11 +37,17 @@ class GamingApp extends StatelessWidget {
             tabs: [
               Tab(icon: Icon(Icons.home), text: "Welcome"),
               Tab(icon: Icon(Icons.add_circle), text: "For You"),
+              Tab(icon: Icon(Icons.access_time_filled), text: "Polar Wiki"),
               Tab(icon: Icon(Icons.person), text: "Profile"),
             ],
           ),
-          body: const TabBarView(
-            children: [OpenScreenPage(), ViewPage(), ProfilePage()],
+          body: TabBarView(
+            children: [
+              OpenScreenPage(),
+              ViewPage(),
+              ArchivePage(),
+              ProfilePage()
+            ],
           ),
         ));
   }
