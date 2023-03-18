@@ -38,6 +38,7 @@ dependencies:
   firebase_core: ^2.8.0
   wikipedia: ^0.0.7
   assets_audio_player: ^3.0.6
+  video_player: ^2.5.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,7 @@ flutter:
   assets:
     - assets/images/
     - assets/audios/
+    - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
