@@ -144,8 +144,10 @@ class VideoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     videoPlayerController.initialize();
     videoPlayerController.play();
-    return GestureDetector(
-        onDoubleTap: () => {Navigator.pop(context)},
-        child: VideoPlayer(videoPlayerController));
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("oopsie"),
+        ),
+        body: VideoPlayer(videoPlayerController));
   }
 }
