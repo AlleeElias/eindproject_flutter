@@ -21,8 +21,8 @@ class _PostCardState extends State<PostCard> {
     // TODO: implement build
     return Container(
         decoration: BoxDecoration(
-            color: Colors.black,
-            border: Border.all(color: Colors.black),
+            color: Colors.white,
+            border: Border.all(color: Colors.blue),
             borderRadius: BorderRadius.circular(10)),
         padding: const EdgeInsets.all(5.0),
         margin: const EdgeInsets.all(5.0),
@@ -35,7 +35,7 @@ class _PostCardState extends State<PostCard> {
                 children: [
                   Text(
                     p.title,
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.blue),
                   )
                 ],
               ),
@@ -51,7 +51,7 @@ class _PostCardState extends State<PostCard> {
                   height: tapped ? 100 : 0,
                   child: Text(
                     p.description,
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.blue),
                   ))
             ])));
   }
