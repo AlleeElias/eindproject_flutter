@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/components/navigationbar.dart';
 
 class OpenScreenPage extends StatefulWidget {
   const OpenScreenPage({super.key});

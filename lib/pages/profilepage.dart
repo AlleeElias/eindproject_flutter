@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -62,14 +60,14 @@ class _ProfilePageState extends State<ProfilePage> {
             ],
           ),
           Row(
-            children: [
+            children: const [
               Text(
                   "Hieronder kan je u mening delen over deze prachtige beesten:")
             ],
           ),
           Row(
             children: [
-              Expanded(flex: 6, child: Text("Ik hou van sneeuwberekes?")),
+              const Expanded(flex: 6, child: Text("Ik hou van sneeuwberekes?")),
               Expanded(
                   flex: 4,
                   child: Checkbox(
@@ -83,7 +81,8 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Row(
             children: [
-              Expanded(flex: 6, child: Text("Welke beren vindt u leuk?:")),
+              const Expanded(
+                  flex: 6, child: Text("Welke beren vindt u leuk?:")),
               Expanded(
                   flex: 4,
                   child: DropdownButton(
@@ -103,7 +102,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ],
           ),
           Row(
-            children: [
+            children: const [
               Text("Hieronder kan je je mening uitgebreid bespreken:")
             ],
           ),
@@ -112,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Expanded(
                   child: TextField(
                 controller: inputController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     filled: true,
                     fillColor: Colors.white30,
                     hintText: 'Geef je mening :)'),
@@ -127,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         gekozenBeer = 'Geen';
                         liked = false;
                       }),
-                  child: Text('Versturen!'))
+                  child: const Text('Versturen!'))
             ],
           )
         ],
