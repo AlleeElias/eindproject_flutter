@@ -50,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               MaterialPageRoute(
                                   builder: (context) => VideoPage()))
                         },
-                    child: Image.asset("images/profilepic.jpeg")),
+                    child: Image.asset("assets/images/profilepic.png")),
               ),
               const Expanded(
                 flex: 4,

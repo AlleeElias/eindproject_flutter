@@ -13,17 +13,17 @@ List<Post> posts = [post1, post2, post3, post4];
 
 Post post1 = Post(
     title: 'Dit is mijn eerste post!',
-    image: 'images/profilepic.jpeg',
+    image: 'assets/images/profilepic.png',
     description: 'Bedankt om mijn eerste post te lezen!');
 Post post2 = Post(
     title: 'Dit is mijn tweede post!',
-    image: 'images/profilepic.jpeg',
+    image: 'assets/images/profilepic.png',
     description: 'Bedankt om mijn tweede post te lezen!');
 Post post3 = Post(
     title: 'Dit is mijn derde post!',
-    image: 'images/profilepic.jpeg',
+    image: 'assets/images/profilepic.png',
     description: 'Bedankt om mijn derde post te lezen!');
 Post post4 = Post(
     title: 'Dit is mijn vierde post!',
-    image: 'images/profilepic.jpeg',
+    image: 'assets/images/profilepic.png',
     description: 'Bedankt om mijn vierde post te lezen!');

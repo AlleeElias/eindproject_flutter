@@ -19,7 +19,7 @@ class _OpenScreenState extends State<OpenScreenPage> {
         children: [
           Expanded(
             flex: 10,
-            child: Image.asset("images/profilepic.jpeg"),
+            child: Image.asset("assets/images/profilepic.png"),
           ),
           Text(welkomstring)
         ],
